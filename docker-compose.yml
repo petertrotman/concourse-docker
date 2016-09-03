@@ -26,3 +26,6 @@ concourse-worker:
   volumes: ["./keys/worker:/concourse-keys"]
   environment:
     CONCOURSE_TSA_HOST: concourse-web
+
+registry:
+  image: registry

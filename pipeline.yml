@@ -1,0 +1,15 @@
+resources:
+  - name: hello-world-local
+    type: docker-image
+    source:
+      repository: 172.17.0.2:5000/hello-world
+      insecure_registries:
+        - "172.17.0.2:5000"
+
+jobs:
+  - name: put-local
+    plan:
+      - put: hello-world-local
+        params:
+          pull_repository: hello-world
+
